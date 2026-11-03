@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Cafe</title>
+  <meta name="description" content="Student Cafe: fresh coffee, satisfying bites and a comfortable place to recharge near campus.">
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: 'var(--color-background)',
+            primary: 'var(--color-primary)',
+            text: 'var(--color-text)',
+            muted: 'var(--color-muted)',
+            surface: 'var(--color-surface)',
+            border: 'var(--color-border)',
+            'on-primary': 'var(--color-on-primary)'
+          },
+          spacing: {
+            'figma-8': 'var(--space-8)', 'figma-12': 'var(--space-12)', 'figma-16': 'var(--space-16)',
+            'figma-24': 'var(--space-24)', 'figma-32': 'var(--space-32)', 'figma-64': 'var(--space-64)',
+            'figma-160': 'var(--space-160)'
+          },
+          borderRadius: {
+            'figma-8': 'var(--radius-8)', 'figma-16': 'var(--radius-16)', 'figma-24': 'var(--radius-24)'
+          },
+          fontSize: {
+            small: 'var(--font-size-small)', body: 'var(--font-size-body)', 'body-large': 'var(--font-size-body-large)',
+            'card-title': 'var(--font-size-card-title)', 'section-title': 'var(--font-size-section-title)',
+            'hero-title': 'var(--font-size-hero-title)'
+          },
+          fontFamily: { sans: 'var(--font-family)' }
+        }
+      }
+    };
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap');
+    :root {
+      --color-primary: #235d3a;
+      --color-text: #243b2e;
+      --color-muted: #526457;
+      --color-surface: #ffffff;
+      --color-border: #d6ded6;
+      --color-background: #fff9f1;
+      --color-on-primary: #ffffff;
+      --space-0: 0px;
+      --space-8: 8px;
+      --space-12: 12px;
+      --space-16: 16px;
+      --space-24: 24px;
+      --space-32: 32px;
+      --space-64: 64px;
+      --space-160: 160px;
+      --radius-0: 0px;
+      --radius-8: 8px;
+      --radius-16: 16px;
+      --radius-24: 24px;
+      --font-size-small: 14px;
+      --font-size-body: 16px;
+      --font-size-body-large: 18px;
+      --font-size-card-title: 24px;
+      --font-size-section-title: 32px;
+      --font-size-hero-title: 48px;
+      --font-family: Arimo, Arial, sans-serif;
+    }
+    html { scroll-behavior: smooth; scroll-padding-top: 4rem; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid var(--color-primary); outline-offset: 2px;
+    }
+  </style>
+</head>
+<body class="bg-background font-sans text-text">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-2 focus:top-2 focus:z-50 focus:rounded focus:bg-white focus:p-2 hover:bg-primary hover:text-on-primary">Skip to content</a>
+
+  <header class="sticky top-0 z-40 bg-surface shadow-sm">
+    <nav class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-6 py-4 lg:px-figma-160 lg:py-figma-24" aria-label="Main">
+      <a href="#home" class="rounded-figma-8 text-card-title font-bold text-primary hover:underline">Student Cafe</a>
+      <ul class="flex gap-5 text-body">
+        <li><a href="#home" class="rounded px-1 py-1 hover:text-primary hover:underline">Home</a></li>
+        <li><a href="#menu" class="rounded px-1 py-1 hover:text-primary hover:underline">Menu</a></li>
+        <li><a href="#contact" class="rounded px-1 py-1 hover:text-primary hover:underline">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="home" class="mx-auto flex max-w-6xl flex-col items-center gap-figma-32 px-6 py-12 md:flex-row md:gap-figma-32 md:px-12 md:py-figma-64 lg:px-figma-160">
+      <div class="w-full md:flex-1">
+        <p class="text-body font-semibold text-primary">Your between-class break</p>
+        <h1 class="mt-2 text-hero-title font-bold leading-tight text-primary">Good coffee. Better breaks.</h1>
+        <p class="mt-4 max-w-md text-body-large leading-relaxed text-muted">Fresh coffee, satisfying bites, and a comfortable place to recharge near campus.</p>
+        <a href="#menu" class="mt-6 inline-block rounded-figma-8 bg-primary px-figma-16 py-figma-12 text-body font-semibold text-on-primary transition hover:opacity-90">Explore the menu</a>
+      </div>
+      <img src="images/hero.jpg" alt="Students chatting and studying at wooden tables inside a cozy, bookshelf-lined cafe" class="h-auto w-full max-w-md rounded-figma-24 object-cover md:flex-1">
+    </section>
+
+    <section id="menu" class="mx-auto max-w-6xl px-6 py-12 md:px-12 md:py-figma-64 lg:px-figma-160">
+      <h2 class="text-section-title font-bold text-primary">Campus favourites</h2>
+      <p class="mt-1 text-body text-muted">Simple choices for a better break.</p>
+      <ul class="mt-6 grid grid-cols-1 gap-figma-24 md:grid-cols-2 lg:grid-cols-3">
+        <li>
+          <article class="h-full rounded-figma-16 border border-border bg-surface p-figma-24 shadow-sm transition hover:shadow-md">
+            <h3 class="text-card-title font-bold text-primary">Fresh Coffee</h3>
+            <p class="mt-2 text-body leading-relaxed text-muted">A freshly brewed cup for your next lecture or a relaxed catch-up.</p>
+            <p class="mt-4 text-body-large font-bold text-primary">Rs. 350</p>
+          </article>
+        </li>
+        <li>
+          <article class="h-full rounded-figma-16 border border-border bg-surface p-figma-24 shadow-sm transition hover:shadow-md">
+            <h3 class="text-card-title font-bold text-primary">Grilled Sandwich</h3>
+            <p class="mt-2 text-body leading-relaxed text-muted">A warm, filling sandwich made for a busy day on campus.</p>
+            <p class="mt-4 text-body-large font-bold text-primary">Rs. 550</p>
+          </article>
+        </li>
+        <li>
+          <article class="h-full rounded-figma-16 border border-border bg-surface p-figma-24 shadow-sm transition hover:shadow-md">
+            <h3 class="text-card-title font-bold text-primary">Study Snack</h3>
+            <p class="mt-2 text-body leading-relaxed text-muted">A small sweet treat to enjoy during your study break.</p>
+            <p class="mt-4 text-body-large font-bold text-primary">Rs. 250</p>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact" class="mx-auto max-w-6xl px-6 py-12 md:px-12 md:py-figma-64 lg:px-figma-160">
+      <h2 class="text-section-title font-bold text-primary">Contact us</h2>
+      <p class="mt-1 text-body text-muted">Questions about our menu? Get in touch.</p>
+      <form class="mt-6 flex w-full max-w-xl flex-col gap-4" action="#" method="post">
+        <div class="flex flex-col gap-1">
+          <label for="name" class="text-body font-semibold">Your name</label>
+          <input id="name" name="name" type="text" autocomplete="name" placeholder="Jane Doe" required class="w-full rounded-figma-8 border border-border bg-surface p-figma-12 text-body transition hover:border-primary">
+        </div>
+        <div class="flex flex-col gap-1">
+          <label for="email" class="text-body font-semibold">Email address</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="jane@example.com" required class="w-full rounded-figma-8 border border-border bg-surface p-figma-12 text-body transition hover:border-primary">
+        </div>
+        <div class="flex flex-col gap-1">
+          <label for="message" class="text-body font-semibold">Your message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Tell us how we can help." required class="w-full rounded-figma-8 border border-border bg-surface p-figma-12 text-body transition hover:border-primary"></textarea>
+        </div>
+        <button type="submit" class="self-start rounded-figma-8 bg-primary px-figma-16 py-figma-12 text-body font-semibold text-on-primary transition hover:opacity-90">Send message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="bg-surface py-6 text-center text-small text-muted">
+    <p>&copy; 2026 Student Cafe. All rights reserved.</p>
+  </footer>
+</body>
+</html>
